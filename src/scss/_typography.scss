@@ -1,0 +1,23 @@
+body{
+    font-family: FuturaPT;
+    font-weight: 300;
+}
+
+h1, h2 ,h3 ,h4 {
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 20px;
+    @media (min-width: 1024px){
+        line-height: 1.5;
+    }
+}
+
+h3{
+    font-size: 26px;
+    @media (min-width: 1440px){
+        font-size: 48px;
+    }
+    @media (min-width: 1024px){
+        font-size: 36px;
+    }
+}

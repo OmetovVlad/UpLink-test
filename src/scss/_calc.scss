@@ -1,0 +1,54 @@
+.calc_section{
+    padding: 30px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .calc{
+        .rooms_line{
+
+        }
+        .room{
+            display: flex;
+            flex-wrap: wrap;
+            @media (min-width: 768px){
+                background: #FFFFFF;
+                box-shadow: 0px 4px 54.95px rgba(133, 133, 133, 0.25);
+            }
+            &_calc{
+                width: 100%;
+                padding: 0;                
+                @media (min-width: 1600px) {
+                    width: 50%;
+                }
+                @media (min-width: 1440px) {
+                    width: calc(100% - 529px);
+                }
+                @media (min-width: 1024px) {
+                    width: calc(100% - 266px);
+                }
+                @media (min-width: 768px) {
+                    padding: 40px;
+                }
+            }
+            &_photo{
+                display: none;
+                background-image: url('@img/right_demo.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                @media (min-width: 1600px) {
+                    width: 50%;
+                }
+                @media (min-width: 1440px) {
+                    width: 529px;
+                }
+                @media (min-width: 1024px) {
+                    width: 266px;
+                    display: block;
+                }
+            }
+        }
+    }
+}

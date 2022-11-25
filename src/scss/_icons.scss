@@ -1,0 +1,10 @@
+.icon{
+    font-family: icons;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.icon-arrow:before { content: '\e800'; }
+.icon-minus:before { content: '\e801'; }
+.icon-plus:before { content: '\e802'; }
+.icon-round_plus:before { content: '\e803'; }

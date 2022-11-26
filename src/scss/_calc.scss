@@ -18,7 +18,9 @@
             }
             &_calc{
                 width: 100%;
-                padding: 0;                
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
                 @media (min-width: 1600px) {
                     width: 50%;
                 }
@@ -29,7 +31,66 @@
                     width: calc(100% - 266px);
                 }
                 @media (min-width: 768px) {
-                    padding: 40px;
+                    padding: 40px 25px;
+                }
+
+                .input_wrap{
+                    width: 100%;
+                    @media (min-width: 768px){
+                        width: 50%;
+                        padding: 0 15px;
+                    }
+                    & + .input_wrap{
+                        margin-top: 10px;
+                        @media (min-width: 768px){
+                            margin-top: 0;
+                        }
+                    }
+                    .count_input{
+                        position: relative;
+                        background: rgba(183, 186, 203, 0.2);
+                        input{
+                            display: block;
+                            width: calc(100% - (60px * 2));
+                            margin: 0 auto;
+                            border: 0;
+                            padding: 18px 0;
+                            text-align: center;
+                            background: initial;
+                        }
+                        .arithmetic{
+                            position: absolute;
+                            top: 10px;
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                            background: rgba(183, 186, 203, 0.4);
+                            cursor: pointer;
+                            transition: all $animation_speed;
+                            &:active{
+                                background: rgba(183, 186, 203, 0.75);
+                            }
+                            @media (min-width: 992px){
+                                &:hover{
+                                    background: rgba(183, 186, 203, 0.6);
+                                }
+                            }
+                            i{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 16px;
+                                line-height: 1;
+                            }
+                            &.minus{
+                                left: 10px;
+                            }
+                            &.plus{
+                                right: 10px;
+                            }
+                        }
+                    }
                 }
             }
             &_photo{

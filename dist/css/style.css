@@ -27,6 +27,17 @@ body {
   font-weight: 300;
 }
 
+input,
+button {
+  font-family: FuturaPT;
+}
+
+input {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 h1,
 h2,
 h3,
@@ -86,6 +97,70 @@ h3 {
 .calc_section .calc .room_calc {
   width: 100%;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calc_section .calc .room_calc .input_wrap {
+  width: 100%;
+}
+
+.calc_section .calc .room_calc .input_wrap + .input_wrap {
+  margin-top: 10px;
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input {
+  position: relative;
+  background: rgba(183, 186, 203, 0.2);
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input input {
+  display: block;
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  border: 0;
+  padding: 18px 0;
+  text-align: center;
+  background: initial;
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input .arithmetic {
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: rgba(183, 186, 203, 0.4);
+  cursor: pointer;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input .arithmetic:active {
+  background: rgba(183, 186, 203, 0.75);
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input .arithmetic i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input .arithmetic.minus {
+  left: 10px;
+}
+
+.calc_section .calc .room_calc .input_wrap .count_input .arithmetic.plus {
+  right: 10px;
 }
 
 .no-webp .calc_section .calc .room_photo {
@@ -125,11 +200,26 @@ body {
   }
 
   .calc_section .calc .room_calc {
-    padding: 40px;
+    padding: 40px 25px;
+  }
+
+  .calc_section .calc .room_calc .input_wrap {
+    width: 50%;
+    padding: 0 15px;
+  }
+
+  .calc_section .calc .room_calc .input_wrap + .input_wrap {
+    margin-top: 0;
   }
 
   .container {
     max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .calc_section .calc .room_calc .input_wrap .count_input .arithmetic:hover {
+    background: rgba(183, 186, 203, 0.6);
   }
 }
 

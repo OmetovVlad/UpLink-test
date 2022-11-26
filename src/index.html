@@ -9,18 +9,33 @@
             <div class="container">
 
                 <h3>Рассчитайте стоимость Вашего потолка онлайн!</h3>
-
-                <div class="calc">
-                    <div class="rooms_line">
-                        
-                    </div>
-                    <div class="room">
-                        <div class="room_calc">
-
+                <form id="calc" action="">
+                    <div class="calc">
+                        <div class="rooms_line">
+                            
                         </div>
-                        <div class="room_photo"></div>
+                        <div class="room">
+                            <div class="room_calc">
+                                <div class="input_wrap">
+                                    <div class="count_input">
+                                        <input type="text" value="10" data-insert="м²">
+                                        <span class="arithmetic minus" data-arithmetic="-1"><i class="icon icon-minus"></i></span>
+                                        <span class="arithmetic plus" data-arithmetic="1"><i class="icon icon-plus"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="input_wrap">
+                                    <div class="count_input">
+                                        <input type="text" value="4" data-insert="шт.">
+                                        <span class="arithmetic minus" data-arithmetic="-1"><i class="icon icon-minus"></i></span>
+                                        <span class="arithmetic plus" data-arithmetic="1"><i class="icon icon-plus"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="room_photo"></div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         

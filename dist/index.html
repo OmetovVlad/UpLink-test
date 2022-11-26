@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UpLink - Тестовое :: Monq Digital Lab</title>
-    <link rel="stylesheet" href="css/style.min.css?_v=20221125182056">
+    <link rel="stylesheet" href="css/style.min.css?_v=20221126153252">
 </head>
     <body>
 
@@ -13,21 +13,36 @@
             <div class="container">
 
                 <h3>Рассчитайте стоимость Вашего потолка онлайн!</h3>
-
-                <div class="calc">
-                    <div class="rooms_line">
-                        
-                    </div>
-                    <div class="room">
-                        <div class="room_calc">
-
+                <form id="calc" action="">
+                    <div class="calc">
+                        <div class="rooms_line">
+                            
                         </div>
-                        <div class="room_photo"></div>
+                        <div class="room">
+                            <div class="room_calc">
+                                <div class="input_wrap">
+                                    <div class="count_input">
+                                        <input type="text" value="10" data-insert="м²">
+                                        <span class="arithmetic minus" data-arithmetic="-1"><i class="icon icon-minus"></i></span>
+                                        <span class="arithmetic plus" data-arithmetic="1"><i class="icon icon-plus"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="input_wrap">
+                                    <div class="count_input">
+                                        <input type="text" value="4" data-insert="шт.">
+                                        <span class="arithmetic minus" data-arithmetic="-1"><i class="icon icon-minus"></i></span>
+                                        <span class="arithmetic plus" data-arithmetic="1"><i class="icon icon-plus"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="room_photo"></div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         
-        <script src="js/app.min.js?_v=20221125182056"></script>
+        <script src="js/app.min.js?_v=20221126153252"></script>
     </body>
 </html>

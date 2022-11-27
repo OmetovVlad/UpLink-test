@@ -9,8 +9,15 @@ $(".count_input input").keyup(function () {
     var value = $(this).val().replace(/[^\d]/g, '');
     var inputInsert = $(this).data("insert");
 
-    if (value < 1){
-        var value = 1;
+    if ($(this).data("min") !== undefined){
+        console.log("Задан min");
+        var inputMin = $(this).data("min");
+    }else{
+        var inputMin = 1;
+    }
+
+    if (value < inputMin){
+        var value = inputMin;
         $(this).val(value + " " + inputInsert);
     }
     $(this).val(value + " " + inputInsert);
@@ -25,8 +32,16 @@ $(".count_input .arithmetic").click(function (){
     var arithmetic = Number($(this).data("arithmetic"));
     var value = Number($(this).parent(".count_input").find("input").val().replace(/[^\d]/g, ''));
 
-    if (value + arithmetic < 1){
-        value = 1;
+    if ($(this).parent(".count_input").find("input").data("min") !== undefined){
+        var inputMin = Number($(this).parent(".count_input").find("input").data("min"));
+    }else{
+        var inputMin = 1;
+    }
+
+    console.log(inputMin);
+
+    if (value + arithmetic < inputMin){
+        value = inputMin;
     }else{
         value = value + arithmetic;
     }

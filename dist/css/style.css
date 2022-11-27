@@ -86,6 +86,57 @@ h3 {
           align-items: center;
 }
 
+.calc_section .calc .rooms_line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 23px;
+}
+
+.calc_section .calc .rooms_line span {
+  position: relative;
+  background: rgba(183, 186, 203, 0.4);
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  padding: 18px 20px;
+  cursor: pointer;
+  z-index: 0;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.calc_section .calc .rooms_line span.active {
+  background: #FFFFFF;
+  cursor: default;
+  -webkit-box-shadow: 0px 4px 54.85px rgba(133, 133, 133, 0.25);
+          box-shadow: 0px 4px 54.85px rgba(133, 133, 133, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.calc_section .calc .rooms_line span.add_new_room {
+  background: rgba(183, 186, 203, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calc_section .calc .rooms_line span.add_new_room i {
+  display: block;
+  margin-right: 13px;
+  font-size: 16px;
+}
+
+.calc_section .calc .rooms_line span:active {
+  opacity: 0.75;
+}
+
 .calc_section .calc .room {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -364,6 +415,18 @@ body {
 }
 
 @media (min-width: 768px) {
+  .calc_section .calc .rooms_line {
+    margin-bottom: 0;
+  }
+
+  .calc_section .calc .rooms_line span:hover {
+    background: rgba(183, 186, 203, 0.6);
+  }
+
+  .calc_section .calc .rooms_line span.add_new_room:hover {
+    background: rgba(183, 186, 203, 0.3);
+  }
+
   .calc_section .calc .room {
     background: #FFFFFF;
     -webkit-box-shadow: 0px 4px 54.95px rgba(133, 133, 133, 0.25);

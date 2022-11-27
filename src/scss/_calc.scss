@@ -16,7 +16,7 @@
                 background: #FFFFFF;
                 box-shadow: 0px 4px 54.95px rgba(133, 133, 133, 0.25);
             }
-            &_calc{
+            &_form{
                 width: 100%;
                 padding: 0;
                 display: flex;
@@ -36,9 +36,11 @@
 
                 .input_wrap{
                     width: 100%;
+                    margin-bottom: 10px;
                     @media (min-width: 768px){
                         width: 50%;
                         padding: 0 15px;
+                        margin-bottom: 35px;
                     }
                     & + .input_wrap{
                         margin-top: 10px;
@@ -46,6 +48,14 @@
                             margin-top: 0;
                         }
                     }
+                    .input_name{
+                        display: block;
+                        margin-bottom: 12px;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 23px;
+                    }
+
                     .count_input{
                         position: relative;
                         background: rgba(183, 186, 203, 0.2);
@@ -91,6 +101,161 @@
                             }
                         }
                     }
+
+                    .select{
+                        position: relative;
+                        &_head{
+                            position: relative;
+                            background: rgba(183, 186, 203, 0.2);
+                            transition: all $animation_speed;
+                            cursor: pointer;
+                            .selected_text{
+                                padding: 18px 60px 18px 10px;
+                                span{
+                                    display: block;
+                                    font-size: 18px;
+                                    line-height: 24px
+                                }
+                            }
+                            .arrow{
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                background: #BF3266;
+                                cursor: pointer;
+                                transition: all $animation_speed;
+                                i{
+                                    color: #fff;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 16px;
+                                    line-height: 1;
+                                    transition: all $animation_speed;
+                                }
+                            }
+                            &:active{
+                                .arrow{
+                                    background: rgba(#BF3266, 0.75)!important;
+                                }
+                            }
+                            @media (min-width: 992px){
+                                &:hover{
+                                    background: rgba(183, 186, 203, 0.3);
+                                    .arrow{
+                                        background: rgba(#BF3266, 0.9);
+                                    }
+                                }
+                            }
+                        }
+
+                        .options_list{
+                            opacity: 0;
+                            pointer-events: none;
+                            position: absolute;
+                            top: 120px;
+                            left: 0;
+                            right: 0;
+                            background: #fff;
+                            border-top: 3px solid #BF3266;
+                            max-height: 150px;
+                            overflow: auto;
+                            transition: all $animation_speed;
+                            box-shadow: 0 4px 54.95px rgb(133 133 133 / 25%);
+                            label{
+                                display: block;
+                                position: relative;
+                                cursor: pointer;
+                                span{
+                                    position: relative;
+                                    z-index: 1;
+                                    display: block;
+                                    padding: 7px 15px;
+                                    transition: all $animation_speed;
+                                    @media (min-width: 992px){
+                                        &:hover{
+                                            background: rgba(#BF3266, 0.1);
+                                        }
+                                    }
+                                }
+                                input{
+                                    width: 0;
+                                    height: 0;
+                                    padding: 0;
+                                    margin: 0;
+                                    opacity: 0;
+                                    position: absolute;
+                                    z-index: 0;
+                                    &:checked{
+                                        & + span{
+                                            background: rgba(#BF3266, 0.75);
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .no_tissular{
+                                &.hide{
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &.open{
+                            .select_head{
+                                .arrow{
+                                    i{
+                                        transform: translate(-50%, -50%) rotate(180deg);
+                                    }
+                                }
+                            }
+                            .options_list{
+                                pointer-events: initial;
+                                opacity: 1;
+                                top: 60px;
+                            }
+                        }
+                    }
+                }
+
+                .result{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    @media (min-width: 768px){
+                        padding: 0 15px;
+                    }
+                    span{
+                        &.price{
+                            font-weight: 500;
+                            font-size: 26px;
+                            line-height: 1.3;
+                            color: #333333;
+                            display: block;
+                            @media (min-width: 768px){
+                                font-size: 36px;
+                            }
+                            span{
+                                color: #BF3266;
+                            }
+                            & + span{
+                                display: block;
+                                width: 100%;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 23px;
+                                @media (min-width: 768px){
+                                    width: auto;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             &_photo{
@@ -109,6 +274,11 @@
                     width: 266px;
                     display: block;
                 }
+            }
+            &_calc{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
             }
         }
     }
